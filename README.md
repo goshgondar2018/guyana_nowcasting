@@ -1,6 +1,6 @@
 # Code for "A nowcasting framework for correcting for reporting delays in malaria surveillance" by Tigist F. Menkir, Horace Cox, Canelle Poirier, Melanie Saul, Sharon Jones-Weekes, Collette Clementson, Pablo M. de Salazar, Mauricio Santillana‡, and Caroline O. Buckee‡
 
-# Preliminary Scripts #
+# Preliminary scripts #
 All scripts for descriptive data analysis and generating input files for nowcasting models
 
 # Nowcasting functions #
