@@ -12,8 +12,12 @@ All output figures for descriptive analysis
 # Nowcasting figures #
 All output figures related to nowcasting results
 
+# data #
+All data for descriptive analysis and nowcasting models
+
 # Format of repo #
 1. PreScripts - all preliminary data prep and analysis scripts
 2. DescriptiveOutput - all figure PDFs for descriptive analysis
 3. Nowcasting - scripts consisting of functions to run and plot DIM, NM1, NM2, and ensemble model results + their implementation
 4. NowcastingOutput - all figure PDFs for DIM, NM1, NM2, and ensemble model + histograms pertaining to confidence interval construction
+5. Data - original CSV of all delay data used in descriptive analysis and to generate the input CSVs for nowcasts; sub-folder "nowcasting_data" includes all input CSVs for each region's DIM and NMs
