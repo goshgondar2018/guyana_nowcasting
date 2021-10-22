@@ -89,7 +89,7 @@ ggplot(all_reg_both,aes(x=Region,y=prop,fill=Region))+geom_boxplot()+
   theme(axis.text.x = element_text(size = 10),
         panel.background = element_blank(),axis.line=element_line(color="black"))
 
-ggsave("~/Desktop/Guyana Research/descriptive_figures_july24-21/Figure1b.png")
+ggsave("~/DescriptiveOutput/Figure1b.png")
 ## summary statistics
 quantile(all_reg_both$prop[which(all_reg_both$Region=='1')])
 quantile(all_reg_both$prop[which(all_reg_both$Region=='4')])
@@ -121,7 +121,7 @@ annual_cases_plot<-ggplot(annual_cases,aes(YrRecorded,n,fill=Region,group=Region
 
 annual_cases_plot+facet_wrap(~Region)
 
-ggsave("~/Desktop/Guyana Research/descriptive_figures_july24-21/annual_cases.png")
+ggsave("~/DescriptiveOutput/annual_cases.png")
   
 annual_cases_no_NA=read.csv("all_regions_delays_all_inf.csv", stringsAsFactors = F)%>%
   filter(Delays!='#NUM!')%>%
@@ -147,7 +147,7 @@ annual_cases_no_NA_plot<-ggplot(annual_cases_no_NA,
 
 annual_cases_no_NA_plot+facet_wrap(~Region)
 
-ggsave("~/Desktop/Guyana Research/descriptive_figures_july24-21/annual_cases_no_na.png")
+ggsave("~/DescriptiveOutput/annual_cases_no_na.png")
 
 # extract median delays for each region, over the study period
 median.delays_reg<-all_delays %>% 
@@ -199,7 +199,7 @@ ggarrange(reg1_hist,reg4_hist,reg7_hist,reg8_hist,reg9_hist,
           ncol = 2, nrow = 3, label.x=0.4, font.label = list(size = 9))+
   theme_transparent(base_size = 12, base_family = "")
 
-ggsave("~/Desktop/Guyana Research/descriptive_figures_july24-21/all_delays_histogram.png")
+ggsave("~/DescriptiveOutput/all_delays_histogram.png")
 
 # extract delay data by region at the monthly level 
 reg1_month <- all_delays%>%
