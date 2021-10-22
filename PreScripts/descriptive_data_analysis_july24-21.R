@@ -14,8 +14,6 @@ library(dplyr)
 library(ggpubr)
 library(ncf)
 setwd("~/data")
-
-#all_delays<-read.csv("all_regions_delays_all_inf.csv", stringsAsFactors = F)
   
 # read in all region delay data, calculate summary measures
 all_delays<-read.csv("all_regions_delays_all_inf.csv", stringsAsFactors = F)%>%
@@ -260,13 +258,6 @@ colnames(reg9_month)[2]<-"total_delays_reg_9"
 
 ## assess correlations between rainfall and median delays (2006-2019)
 # read in rainfall data - adapted from code provided by Ayesha Mahmud 
-range= c( "2006-01-01","2019-12-31")
-munic <- getData("GADM", country="GUY", level=1)
-ncfile = paste("cru_ts4.04.1901.2019.pre",".dat.nc", sep = "") 
-pre <- cruts2poly(ncfile, munic, timeRange = range , na.rm = TRUE)
-pre@data$code_long = as.character(unique(munic$GID_1))
-pre <- as.data.frame(pre@data)
-
 # subset to region1
 pre_reg1<-t(pre[1,-length(pre)])
 
