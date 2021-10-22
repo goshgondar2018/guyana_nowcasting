@@ -1,6 +1,5 @@
 library(tidyverse)
 library(DataCombine)
-setwd("~/Desktop/Guyana Research/")
 
 # ref for mondf function: https://rdrr.io/github/keithabailey/PRMTools/src/R/mondf.R
 mondf <- function(d1, d2) {
@@ -99,15 +98,14 @@ prep_data=function(all_region_data,region){
   return(regi_data_prep_final_2)
 }
 
-setwd("~/Desktop/Guyana Research")
-
+setwd("~/data")
 reg1_data=prep_data("all_regions_delays_all_inf.csv",1)
 reg4_data=prep_data("all_regions_delays_all_inf.csv",4)
 reg7_data=prep_data("all_regions_delays_all_inf.csv",7)
 reg8_data=prep_data("all_regions_delays_all_inf.csv",8)
 reg9_data=prep_data("all_regions_delays_all_inf.csv",9)
 
-setwd("~/Desktop/Guyana Research/Nowcasting/Input Data")
+setwd("~/data/nowcasting")
 write.csv(reg1_data,"reg1_data_all_inf_all_yrs_jul22-21.csv",row.names=FALSE)
 write.csv(reg4_data,"reg4_data_all_inf_all_yrs_jul22-21.csv",row.names=FALSE)
 write.csv(reg7_data,"reg7_data_all_inf_all_yrs_jul22-21.csv",row.names=FALSE)
