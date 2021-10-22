@@ -105,7 +105,7 @@ reg7_data=prep_data("all_regions_delays_all_inf.csv",7)
 reg8_data=prep_data("all_regions_delays_all_inf.csv",8)
 reg9_data=prep_data("all_regions_delays_all_inf.csv",9)
 
-setwd("~/data/nowcasting")
+setwd("~/data/nowcasting_input")
 write.csv(reg1_data,"reg1_data_all_inf_all_yrs_jul22-21.csv",row.names=FALSE)
 write.csv(reg4_data,"reg4_data_all_inf_all_yrs_jul22-21.csv",row.names=FALSE)
 write.csv(reg7_data,"reg7_data_all_inf_all_yrs_jul22-21.csv",row.names=FALSE)
