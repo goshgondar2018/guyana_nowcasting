@@ -13,7 +13,7 @@ library(plyr)
 library(dplyr)
 library(ggpubr)
 library(ncf)
-setwd("~/Desktop/Guyana Research")
+setwd("~/data")
 
 #all_delays<-read.csv("all_regions_delays_all_inf.csv", stringsAsFactors = F)
   
