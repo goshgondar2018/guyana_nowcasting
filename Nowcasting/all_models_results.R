@@ -1,8 +1,5 @@
 
-# read in rainfall data for network models 
-# adapted from code provided by Ayesha Mahmud 
-setwd("~/Desktop/Guyana Research")
-
+# read in rainfall data for network models  - adapted from code provided by Ayesha Mahmud 
 #range= c( "2006-01-01","2019-12-31")
 #munic <- getData("GADM", country="GUY", level=1)
 #ncfile = paste("cru_ts4.04.1901.2019.pre",".dat.nc", sep = "") 
@@ -15,12 +12,14 @@ setwd("~/Desktop/Guyana Research")
 #pre_reg8<-t(pre[8,-length(pre)])
 #pre_reg9<-t(pre[9,-length(pre)])
 
+# directly read in extracted CSVs from above
 pre_reg1 <- read.csv("pre_reg1.csv")[,2]
 pre_reg7 <- read.csv("pre_reg7.csv")[,2]
 pre_reg8 <- read.csv("pre_reg8.csv")[,2]
 pre_reg9 <- read.csv("pre_reg9.csv")[,2]
 
-setwd("~/Desktop/Guyana Research/Nowcasting/Input Data")
+
+setwd("~/data/nowcasting_input/")
 
 # extract and plot DIM results
 
