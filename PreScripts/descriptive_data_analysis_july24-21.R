@@ -257,65 +257,74 @@ colnames(reg8_month)[2]<-"total_delays_reg_8"
 colnames(reg9_month)[2]<-"total_delays_reg_9"
 
 ## assess correlations between rainfall and median delays (2006-2019)
-# read in rainfall data - adapted from code provided by Ayesha Mahmud 
-# subset to region1
-pre_reg1<-t(pre[1,-length(pre)])
 
-# combine with monthly delays data
+# read in rainfall data for network models  - adapted from code provided by Ayesha Mahmud 
+#range= c( "2006-01-01","2019-12-31")
+#munic <- getData("GADM", country="GUY", level=1)
+#ncfile = paste("cru_ts4.04.1901.2019.pre",".dat.nc", sep = "") 
+#pre <- cruts2poly(ncfile, munic, timeRange = range , na.rm = TRUE)
+
+#pre@data$code_long = as.character(unique(munic$GID_1))
+#pre <- as.data.frame(pre@data)
+#pre_reg1<-t(pre[1,-length(pre)])
+#pre_reg7<-t(pre[7,-length(pre)])
+#pre_reg8<-t(pre[8,-length(pre)])
+#pre_reg9<-t(pre[9,-length(pre)])
+
+# read in all extracted precipitation CSVs from above
+pre_reg1<-read.csv("pre_reg1.csv")[,2]
+pre_reg4<-read.csv("pre_reg4.csv")[,2]
+pre_reg7<-read.csv("pre_reg7.csv")[,2]
+pre_reg8<-read.csv("pre_reg8.csv")[,2]
+pre_reg9<-read.csv("pre_reg9.csv")[,2]
+
+# Region 1 rainfall tests
+## combine with monthly delays data
 pre_reg1<-cbind.data.frame(seq(as.Date("2006/1/1"), as.Date("2019/12/31"), by = "month"),pre_reg1)
 colnames(pre_reg1)<-c("mo_yr_examined","pre")
 pre_reg1$mo_yr_examined<-format(pre_reg1$mo_yr_examined,'%m/%y')
 reg1_month_pre<-merge(pre_reg1,reg1_month,by="mo_yr_examined")
-
 # compute correlation + significance
 cor.test(reg1_month_pre$pre,reg1_month_pre$total_delays_reg_1)
 ccf_reg1=ccf(reg1_month_pre$pre,reg1_month$total_delays_reg_1)
 
-# subset to region4
-pre_reg4<-t(pre[4,-length(pre)])
-# combine with monthly delays data
+# Region 4 rainfall tests
+## combine with monthly delays data
 pre_reg4<-cbind.data.frame(seq(as.Date("2006/1/1"), as.Date("2019/12/31"), by = "month"),pre_reg4)
 colnames(pre_reg4)<-c("mo_yr_examined","pre")
 pre_reg4$mo_yr_examined<-format(pre_reg4$mo_yr_examined,'%m/%y')
 reg4_month_pre<-merge(pre_reg4,reg4_month,by="mo_yr_examined")
-
-# compute correlation + significance
+## compute correlation + significance
 cor.test(reg4_month_pre$pre,reg4_month_pre$total_delays_reg_4)
 ccf_reg4=ccf(reg4_month_pre$pre,reg4_month$total_delays_reg_4)
 
-# subset to region7
-pre_reg7<-t(pre[7,-length(pre)])
-# combine with monthly delays data
+# Region 7 rainfall tests
+## combine with monthly delays data
 pre_reg7<-cbind.data.frame(seq(as.Date("2006/1/1"), as.Date("2019/12/31"), by = "month"),pre_reg7)
 colnames(pre_reg7)<-c("mo_yr_examined","pre")
 pre_reg7$mo_yr_examined<-format(pre_reg7$mo_yr_examined,'%m/%y')
 reg7_month_pre<-merge(pre_reg7,reg7_month,by="mo_yr_examined")
-
-# compute correlation + significance
+## compute correlation + significance
 cor.test(reg7_month_pre$pre,reg7_month_pre$total_delays_reg_7)
 ccf_reg7=ccf(reg7_month_pre$pre,reg7_month$total_delays_reg_7)
 
-# subset to region8
-pre_reg8<-t(pre[8,-length(pre)])
-# combine with monthly delays data
+# Region 8 rainfall tests
+## combine with monthly delays data
 pre_reg8<-cbind.data.frame(seq(as.Date("2006/1/1"), as.Date("2019/12/31"), by = "month"),pre_reg8)
 colnames(pre_reg8)<-c("mo_yr_examined","pre")
 pre_reg8$mo_yr_examined<-format(pre_reg8$mo_yr_examined,'%m/%y')
 reg8_month_pre<-merge(pre_reg8,reg8_month,by="mo_yr_examined")
-
-# compute correlation + significance
+## compute correlation + significance
 cor.test(reg8_month_pre$pre,reg8_month_pre$total_delays)
 ccf_reg8=ccf(reg8_month_pre$pre,reg8_month$total_delays)
 
-# subset to region9
-pre_reg9<-t(pre[9,-length(pre)])
-# combine with monthly delays data
+# Region 9 rainfall tests
+## combine with monthly delays data
 pre_reg9<-cbind.data.frame(seq(as.Date("2006/1/1"), as.Date("2019/12/31"), by = "month"),pre_reg9)
 colnames(pre_reg9)<-c("mo_yr_examined","pre")
 pre_reg9$mo_yr_examined<-format(pre_reg9$mo_yr_examined,'%m/%y')
 reg9_month_pre<-merge(pre_reg9,reg9_month,by="mo_yr_examined")
-
-# compute correlation + significance
+## compute correlation + significance
 cor.test(reg9_month_pre$pre,reg9_month_pre$total_delays_reg_9)
 ccf_reg9=ccf(reg9_month_pre$pre,reg9_month$total_delays_reg_9)
 
