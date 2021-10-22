@@ -1,18 +1,6 @@
+setwd("~/data")
 
-# read in rainfall data for network models  - adapted from code provided by Ayesha Mahmud 
-#range= c( "2006-01-01","2019-12-31")
-#munic <- getData("GADM", country="GUY", level=1)
-#ncfile = paste("cru_ts4.04.1901.2019.pre",".dat.nc", sep = "") 
-#pre <- cruts2poly(ncfile, munic, timeRange = range , na.rm = TRUE)
-
-#pre@data$code_long = as.character(unique(munic$GID_1))
-#pre <- as.data.frame(pre@data)
-#pre_reg1<-t(pre[1,-length(pre)])
-#pre_reg7<-t(pre[7,-length(pre)])
-#pre_reg8<-t(pre[8,-length(pre)])
-#pre_reg9<-t(pre[9,-length(pre)])
-
-# directly read in extracted CSVs from above
+# directly read in previously extracted rainfall CSVs 
 pre_reg1 <- read.csv("pre_reg1.csv")[,2]
 pre_reg7 <- read.csv("pre_reg7.csv")[,2]
 pre_reg8 <- read.csv("pre_reg8.csv")[,2]
