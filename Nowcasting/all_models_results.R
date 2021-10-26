@@ -183,5 +183,4 @@ error_reduction_factor_reg7=r_rmse_reg7b/r_rmse_reg7_NM1
 r_rmse_reg8b<-rrmse(data_and_predictions_reg8_NM2$known,data_and_predictions_reg8_NM2$true)
 error_reduction_factor_reg8=r_rmse_reg8b/r_rmse_reg8_NM2
 
-# compare rmse and SD of residuals
 
