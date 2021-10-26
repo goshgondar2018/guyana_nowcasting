@@ -171,20 +171,16 @@ ggsave("~/Desktop/Guyana Research/Nowcasting/Figures_aug03-21/reg8_all_inf_all_m
 
 # compute error reduction for best performing NM
 ## first compute the error rate associated with relying on known cases
-r_rmse_reg1b<-sqrt(mean((data_and_predictions_reg1_DIM$known-data_and_predictions_reg1_DIM$true)^2))/(diff(range(data_and_predictions_reg1_DIM$true)))
-percent_error_reduction_reg1=((r_rmse_reg1b-r_rmse_reg1_NM2)/r_rmse_reg1b)*100
-error_reduction_factor_reg1=r_rmse_reg1b/r_rmse_reg1_NM2
+r_rmse_reg1b<-rrmse(data_and_predictions_reg1_NM$known,data_and_predictions_reg1_NM$true)
+error_reduction_factor_reg1=r_rmse_reg1b/r_rmse_reg1_NM1
 
-r_rmse_reg4b<-sqrt(mean((data_and_predictions_reg4_DIM$known-data_and_predictions_reg4_DIM$true)^2))/(diff(range(data_and_predictions_reg4_DIM$true)))
-percent_error_reduction_reg4=((r_rmse_reg4b-r_rmse_reg4_DIM)/r_rmse_reg4b)*100
+r_rmse_reg4b<-rrmse(data_and_predictions_reg4_DIM$known,data_and_predictions_reg4_DIM$true)
 error_reduction_factor_reg4=r_rmse_reg4b/r_rmse_reg4_DIM
 
-r_rmse_reg7b<-sqrt(mean((data_and_predictions_reg7_DIM$known-data_and_predictions_reg7_DIM$true)^2))/(diff(range(data_and_predictions_reg7_DIM$true)))
-percent_error_reduction_reg7=((r_rmse_reg7b-r_rmse_reg7_NM2)/r_rmse_reg7b)*100
-error_reduction_factor_reg7=r_rmse_reg7b/r_rmse_reg7_NM2
+r_rmse_reg7b<-rrmse(data_and_predictions_reg7_NM$known,data_and_predictions_reg7_NM$true)
+error_reduction_factor_reg7=r_rmse_reg7b/r_rmse_reg7_NM1
 
-r_rmse_reg8b<-sqrt(mean((data_and_predictions_reg8_DIM$known-data_and_predictions_reg8_DIM$true)^2))/(diff(range(data_and_predictions_reg8_DIM$true)))
-percent_error_reduction_reg8=((r_rmse_reg8b-r_rmse_reg8_NM2)/r_rmse_reg8b)*100
+r_rmse_reg8b<-rrmse(data_and_predictions_reg8_NM2$known,data_and_predictions_reg8_NM2$true)
 error_reduction_factor_reg8=r_rmse_reg8b/r_rmse_reg8_NM2
 
 # compare rmse and SD of residuals
