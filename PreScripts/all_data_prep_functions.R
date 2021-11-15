@@ -29,6 +29,7 @@ prep_data=function(all_region_data,region){
   regi_data_prep_1$IDKEY1<-as.POSIXct(strptime(regi_data_prep_1$IDKEY1,format='%Y-%m-%d'))
   
   # create data frame of known cases from t-n 
+  # early tips and feedback for setting up _prep_2 and _prep_3 provided by Nishant Kishore
   regi_data_prep_2 <- regi_data_prep_1%>% 
     mutate(MoYrKnown=format(as.Date(IDKEY1,format='%Y-%m-%d'),'%Y-%m'))%>%
     mutate(MoYrRecorded=format(as.Date(DateSmearEXAMINED,format='%Y-%m-%d'),'%Y-%m'))%>%
