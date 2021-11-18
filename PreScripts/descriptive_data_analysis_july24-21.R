@@ -271,7 +271,7 @@ colnames(reg9_month)[2]<-"total_delays_reg_9"
 #pre_reg8<-t(pre[8,-length(pre)])
 #pre_reg9<-t(pre[9,-length(pre)])
 
-# read in all extracted precipitation CSVs from above
+# read in all extracted precipitation CSVs from above (files saved under data sub-folder) 
 pre_reg1<-read.csv("pre_reg1.csv")[,2]
 pre_reg4<-read.csv("pre_reg4.csv")[,2]
 pre_reg7<-read.csv("pre_reg7.csv")[,2]
